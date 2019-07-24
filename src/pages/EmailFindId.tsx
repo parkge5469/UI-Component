@@ -6,7 +6,7 @@ import {} from '@material-ui/core/colors';
 
 interface Props extends RouteComponentProps<void>{}
 
-const PhoneFindId = (props:Props) => {
+const EmailFindId = (props:Props) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -14,7 +14,7 @@ const PhoneFindId = (props:Props) => {
                 <div className={classes.inputBox}>
                     <div className={classes.inputForm}>
                         <TextField className={classes.inputStyle} label="이름" />
-                        <TextField className={classes.inputStyle} label="전화번호" />
+                        <TextField className={classes.inputStyle} label="이메일 주소" />
                     </div>
                     <div className={classes.buttonForm}>
                         <Button className={classes.sendButton} variant='contained' color='primary'>인증번호 전송</Button>
@@ -82,4 +82,4 @@ const useStyles = makeStyles({
 
 
 
-export default PhoneFindId;
+export default EmailFindId;

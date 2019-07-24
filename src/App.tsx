@@ -15,6 +15,9 @@ import HomePage from "./pages/HomePage";
 import TodoPage from "./pages/TodoPage";
 import LoginPage from "./pages/LoginPage";
 import FindIdPage from "./pages/FindIdPage";
+import PhoneFindId from "./pages/PhoneFindId";
+import EmailFindId from "./pages/EmailFindId";
+import FindPasswordPage from "./pages/FindPasswordPage";
 import { RootState } from "./reducers/index";
 import withRoot from "./withRoot";
 
@@ -28,6 +31,9 @@ function Routes() {
 			<Route exact={true} path="/todo" component={TodoPage} />
 			<Route exact={true} path="/login" component={LoginPage} />
 			<Route exact={true} path="/findId" component={FindIdPage} />
+			<Route exact={true} path="/phoneFindId" component={PhoneFindId} />
+			<Route exact={true} path="/emailFindId" component={EmailFindId} />
+			<Route exact={true} path="/findPasswordPage" component={FindPasswordPage} />
 		</div>
 	);
 }

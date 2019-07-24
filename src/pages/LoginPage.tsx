@@ -20,7 +20,7 @@ const LoginPage = (props:Props) => {
                         <div className={classes.loginForm}>
                             <div className={classes.inputForm}>
                                 <CssTextField id="custom-css-standard-input" label="ID" />
-                                <CssTextField id="custom-css-standard-input" label="Password" />
+                                <CssTextField id="custom-css-standard-input" label="Password" type='password' />
                             </div>
 
                             <LoginButton variant='contained' color='primary' fullWidth={true} >
