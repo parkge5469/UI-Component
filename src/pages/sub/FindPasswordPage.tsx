@@ -16,8 +16,9 @@ const FindPasswordPage = (props:Props) => {
                     <h1>비밀번호 찾기</h1>
                 </div>
                 <TextField
-                    id="outlined-bare"
-                    defaultValue="아이디 입력"
+                    id="outlined-full-width"
+                    placeholder="아이디를 입력하세요."
+
                     margin="normal"
                     variant="outlined"
                 />
