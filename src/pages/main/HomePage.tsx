@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/styles";
 import * as React from "react";
 import { useSelector } from "react-redux";
 import { RouteComponentProps } from "react-router-dom";
-import HomeBox from "../components/HomeBox";
-import { RootState } from "../reducers";
+import HomeBox from "../../components/HomeBox";
+import { RootState } from "../../reducers";
 
 interface Props extends RouteComponentProps<void> {}
 

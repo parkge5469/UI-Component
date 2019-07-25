@@ -3,8 +3,8 @@ import { Theme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/styles";
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
-import TodoTable from "../components";
-import TodoDialog from "../components/TodoDialog";
+import TodoTable from "../../components";
+import TodoDialog from "../../components/TodoDialog";
 
 interface Props extends RouteComponentProps<void> {}
 

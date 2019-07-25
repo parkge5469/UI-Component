@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps,NavLink } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/styles'
 import { Card,CardHeader,CardContent,Button,TextField } from '@material-ui/core';
 import { orange } from '@material-ui/core/colors';
@@ -23,13 +23,15 @@ const LoginPage = (props:Props) => {
                                 <CssTextField id="custom-css-standard-input" label="Password" type='password' />
                             </div>
 
-                            <LoginButton variant='contained' color='primary' fullWidth={true} >
-                                로그인
-                            </LoginButton>
+                            <NavLink to='/main'>
+                                <LoginButton variant='contained' color='primary' fullWidth={true} >
+                                    로그인
+                                </LoginButton>
+                            </NavLink>
                             <div className={classes.buttonForm}>
-                                <Button className={classes.buttonStyle} variant='contained' color='primary'>아이디 찾기</Button>
-                                <Button className={classes.buttonStyle} variant='contained' color='primary'>비밀번호 찾기</Button>
-                                <Button className={classes.buttonStyle} variant='contained' color='primary'>회원가입</Button>
+                                <NavLink to='findId'><Button className={classes.buttonStyle} variant='contained' color='primary'>아이디 찾기</Button></NavLink>
+                                <NavLink to='findPassword'><Button className={classes.buttonStyle} variant='contained' color='primary'>비밀번호 찾기</Button></NavLink>
+                                <NavLink to='signUp'><Button className={classes.buttonStyle} variant='contained' color='primary'>회원가입</Button></NavLink>
                             </div>
                         </div>
                     </CardContent>
@@ -43,6 +45,7 @@ const LoginPage = (props:Props) => {
 const useStyles = makeStyles({
     root: {
         height: "100%",
+        minHeight: "100%",
 		textAlign: "center",
 		paddingTop: 20,
 		paddingLeft: 15,

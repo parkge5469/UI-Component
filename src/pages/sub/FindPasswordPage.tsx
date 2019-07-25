@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps,NavLink } from 'react-router-dom';
 import { Button,TextField } from '@material-ui/core';
 import { makeStyles,withStyles } from '@material-ui/styles';
 import {} from '@material-ui/core/colors';
@@ -21,7 +21,7 @@ const FindPasswordPage = (props:Props) => {
                     margin="normal"
                     variant="outlined"
                 />
-                <Button variant='contained' color='primary' size='large'>다음</Button>
+                <Button variant='contained' color='primary' size='large'><NavLink to='choiceFindPW' > 다음</NavLink></Button>
             </div>
         </div>
     )

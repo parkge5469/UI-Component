@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps,NavLink } from 'react-router-dom';
 import { makeStyles,withStyles } from '@material-ui/styles';
 import { Button } from '@material-ui/core';
 import { orange } from '@material-ui/core/colors'
@@ -16,6 +16,7 @@ const FindIdPage = (props:Props) => {
                     <h1>아이디 찾기</h1>
                 </div>
                 <div className={classes.buttonForm}>
+                    
                     <CustomButton 
                         className={classes.buttonStyle}
                         fullWidth={true} 
@@ -23,8 +24,12 @@ const FindIdPage = (props:Props) => {
                         variant='contained'
                         color='primary'
                     >
-                        휴대전화로 찾기
+                        <NavLink to='phoneFindId'>
+                            휴대전화로 찾기
+                        </NavLink>
                     </CustomButton>
+                    
+                    
                     <CustomButton 
                         className={classes.buttonStyle}
                         fullWidth={true} 
@@ -32,8 +37,11 @@ const FindIdPage = (props:Props) => {
                         variant='contained'
                         color='primary'
                     >
-                        이메일로 찾기
+                        <NavLink to='emailFindId'>
+                            이메일로 찾기
+                        </NavLink>
                     </CustomButton>
+                    
                 </div>
                 
                    
