@@ -21,7 +21,7 @@ import routes from './../routes.js';
 function RouteTag() {
 	const classes = useStyles();
 	const switchRoutes = (
-		<div className={classes.content}>
+		<div className={classes.root}>
 			<Switch>
 				{
 					routes.map((v: any, key: number) => {
@@ -74,9 +74,11 @@ function Sub(props?: Props) {
 	
 
 	return (
+		
 		<Router history={history}>
 			<RouteTag />
 		</Router>
+		
 	);
 }
 
@@ -87,7 +89,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 	root: {
 		width: "100%",
 		height: "100%",
-		overflow: "hidden",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
 	},	
 	content: {
 		

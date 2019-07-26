@@ -9,7 +9,7 @@ interface Props extends RouteComponentProps<void>{}
 const SignUp = (props:Props) => {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <div>
             
                 <Card className={classes.card}>
                     
@@ -185,14 +185,6 @@ const SignUp = (props:Props) => {
 }
 
 const useStyles = makeStyles({
-    root: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-
-    },
     card: {
         maxHeight: '100%',
         height: '90%',
@@ -205,9 +197,6 @@ const useStyles = makeStyles({
         height: '100%',
         width: '80%',
         display: 'inline-block',
-       
-            
-        
     },
     gridContainer: {
 
