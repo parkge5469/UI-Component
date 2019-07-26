@@ -3,5 +3,6 @@ html, body, #app, #root, #app>div {
     min-height: 100%;
 }
 a {
+    color: white;
     text-decoration: none;
 }
