@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { Button,TextField,Radio,RadioGroup,FormControl,FormControlLabel } from '@material-ui/core';
+import { Button,TextField,Radio,RadioGroup,FormControl,FormControlLabel,Card,CardContent } from '@material-ui/core';
 import { makeStyles,withStyles } from '@material-ui/styles';
 import {} from '@material-ui/core/colors';
 
@@ -42,8 +42,8 @@ const ChoiceFindPW = (props:Props) => {
     )
 
     return (
-        <div className={classes.root}>
-            <div className={classes.radioGroup} >
+        <Card className={classes.card}>
+            <CardContent className={classes.radioGroup} >
                 <FormControl
                     className={classes.formGroup}
                 >
@@ -68,15 +68,16 @@ const ChoiceFindPW = (props:Props) => {
                     </RadioGroup>
                 </FormControl>
                 
-            </div>
+            </CardContent>
 
-        </div>
+        </Card>
     )
 }
 
 const useStyles = makeStyles({
-    root: {
-        height: "100%",
+    card: {
+        height: "50%",
+        width: '60%',
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -84,7 +85,7 @@ const useStyles = makeStyles({
     },
     radioGroup: {
         height: "60%",
-        width: "60%",
+        width: "80%",
         display: "flex",
         flexFlow: "column",
         justifyContent: "center",

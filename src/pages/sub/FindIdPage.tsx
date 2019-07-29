@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { RouteComponentProps,NavLink } from 'react-router-dom';
 import { makeStyles,withStyles } from '@material-ui/styles';
-import { Button } from '@material-ui/core';
+import { Button,Card,CardContent } from '@material-ui/core';
 import { orange } from '@material-ui/core/colors'
 
 interface Props extends RouteComponentProps<void>{}
@@ -10,67 +10,64 @@ const FindIdPage = (props:Props) => {
     const classes = useStyles();
 
     return(
-        <div className={classes.root}>
-            <div className={classes.container}>
+        <Card className={classes.card}>
+            
+            <CardContent className={classes.container}>
                 <div className={classes.bottomBorder}>
                     <h1>아이디 찾기</h1>
                 </div>
                 <div className={classes.buttonForm}>
-                    
-                    <CustomButton 
-                        className={classes.buttonStyle}
-                        fullWidth={true} 
-                        size='large' 
-                        variant='contained'
-                        color='primary'
-                    >
-                        <NavLink to='phoneFindId'>
+                    <NavLink to='phoneFindId' className={classes.buttonSize}>
+                        <CustomButton 
+                            className={classes.buttonStyle}
+                            fullWidth={true} 
+                            size='large' 
+                            variant='contained'
+                            color='primary'
+                        >
                             휴대전화로 찾기
-                        </NavLink>
-                    </CustomButton>
-                    
-                    
-                    <CustomButton 
-                        className={classes.buttonStyle}
-                        fullWidth={true} 
-                        size='large' 
-                        variant='contained'
-                        color='primary'
-                    >
-                        <NavLink to='emailFindId'>
+                        </CustomButton>
+                    </NavLink>
+
+                    <NavLink to='emailFindId' className={classes.buttonSize}>
+                        <CustomButton 
+                            className={classes.buttonStyle}
+                            fullWidth={true} 
+                            size='large' 
+                            variant='contained'
+                            color='primary'
+                        > 
                             이메일로 찾기
-                        </NavLink>
-                    </CustomButton>
-                    
+                        </CustomButton>
+                    </NavLink>
                 </div>
                 
                    
                 
 
-            </div>
-        </div>
+            </CardContent>
+        </Card>
     )
 }
 
 const useStyles = makeStyles({
-    root: {
-        height: "100%",
+    card: {
+        width: '70%',
+        height: '70%',
         textAlign: "center",
-		paddingTop: 20,
-		paddingLeft: 15,
-        paddingRight: 15,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        flexFlow: 'column',
 
     },
     container: {
         width: "60%",
-        height: "40%",
+        height: "80%",
         display: "flex",
         flexFlow: "column",
         alignItems: "center",
-        justifyContent: "flex-start",
+        justifyContent: "center",
     },
     bottomBorder: {
         textAlign: "left",
@@ -80,16 +77,20 @@ const useStyles = makeStyles({
     },
     buttonForm: {
         width: "100%",
-        height: "60%",
+        height: "50%",
         display: "flex",
         flexFlow: "column",
         justifyContent: "space-around"
+    },
+    buttonSize: {
+        width: "100%",
+        height: "30%",
     },
     buttonStyle: {
         fontSize: 20,
         fontWeight: "bold",
         width: "100%",
-        height: "40%",
+        height: "100%",
        
     }
 })

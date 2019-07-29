@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps,NavLink } from 'react-router-dom';
-import { Button,TextField } from '@material-ui/core';
+import { Button,TextField,Card,CardContent } from '@material-ui/core';
 import { makeStyles,withStyles } from '@material-ui/styles';
 import {} from '@material-ui/core/colors';
 
@@ -10,8 +10,8 @@ const FindPasswordPage = (props:Props) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root} >
-            <div className={classes.container}>
+        <Card className={classes.card} >
+            <CardContent className={classes.container}>
                 <div className={classes.bottomBorder}>
                     <h1>비밀번호 찾기</h1>
                 </div>
@@ -22,15 +22,16 @@ const FindPasswordPage = (props:Props) => {
                     margin="normal"
                     variant="outlined"
                 />
-                <Button variant='contained' color='primary' size='large'><NavLink to='choiceFindPW' > 다음</NavLink></Button>
-            </div>
-        </div>
+                <NavLink to='choiceFindPW' className={classes.buttonSize}><Button variant='contained' color='primary' size='large' fullWidth={true}> 다음</Button></NavLink>
+            </CardContent>
+        </Card>
     )
 }
 
 const useStyles = makeStyles({
-    root: {
-        height: "100%",
+    card: {
+        height: "50%",
+        width: '50%',
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -46,6 +47,9 @@ const useStyles = makeStyles({
         width: "100%",
         borderBottom: "3px solid black",
         marginBottom: 20
+    },
+    buttonSize: {
+        width: '100%',
     },
 })
 
