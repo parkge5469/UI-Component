@@ -1,10 +1,17 @@
 import * as React from 'react';
 import { RouteComponentProps,NavLink } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/styles'
-import { Card,CardHeader,CardContent,Button,TextField } from '@material-ui/core';
+import { Card,CardContent,Button,TextField } from '@material-ui/core';
 import { orange } from '@material-ui/core/colors';
+import axios, {AxiosRequestConfig} from 'axios';
 
 interface Props extends RouteComponentProps<void>{}
+interface LoginProps {
+    id: String,
+    pw: String
+}
+
+
 
 const LoginPage = (props:Props) => {
     const classes = useStyles();
@@ -13,10 +20,40 @@ const LoginPage = (props:Props) => {
     const idInput = React.useRef<any>();   
     const passwordInput = React.useRef<any>();    
 
+    const config: AxiosRequestConfig = {
+        url: '/Login',
+        method: 'get',
+        baseURL: 'http://localhost:3001/',
+        data: {
+            id: id,
+            pw: password
+        },
+    }
+
     function HandleClick(): void{
-        const id = idInput.current.value();
-        console.log('LoginPage-HandleClick : ' + id);
+
+
+        axios.get('http://localhost:3001/Login',{
+            data: {
+                id: id,
+                pw: password
+            }
+        })
         
+        
+    }
+
+    function HandleChange(e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void{
+        const value = e.target.value;
+        const name = e.target.name;
+        if('id'===name) {
+            setId(value);
+        }else {
+            setPW(value);
+        }
+        console.log('LoginPage-HandleChange-ID : ' + JSON.stringify(id));
+        console.log('LoginPage-HandleChange-PW : ' + JSON.stringify(password));
+     
     }
 
     return (
@@ -29,15 +66,15 @@ const LoginPage = (props:Props) => {
                     <CardContent>
                         <div className={classes.loginForm}>
                             <div className={classes.inputForm}>
-                                <CssTextField ref={idInput} id="custom-css-standard-input" label="ID" />
-                                <CssTextField ref={passwordInput} id="custom-css-standard-input" label="Password" type='password' />
+                                <CssTextField ref={idInput} name='id' id="custom-css-standard-input" label="ID" onChange={HandleChange} />
+                                <CssTextField ref={passwordInput} name='pw' id="custom-css-standard-input" label="Password" type='password' onChange={HandleChange} />
                             </div>
 
-                            <NavLink to='/main'>
-                                <LoginButton variant='contained' color='primary' fullWidth={true} onClick={HandleClick}>
+                            
+                                <LoginButton variant='contained' color='primary' fullWidth={true} onClick={HandleClick} >
                                     로그인
                                 </LoginButton>
-                            </NavLink>
+                            
                             <div className={classes.buttonForm}>
                                 <NavLink to='findId'><Button className={classes.buttonStyle} variant='contained' color='primary'>아이디 찾기</Button></NavLink>
                                 <NavLink to='findPassword'><Button className={classes.buttonStyle} variant='contained' color='primary'>비밀번호 찾기</Button></NavLink>

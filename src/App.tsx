@@ -1,7 +1,6 @@
 // prettier-ignore
-import { AppBar, Badge, Divider, Drawer as DrawerMui, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, withWidth } from "@material-ui/core";
-import { Theme } from "@material-ui/core/styles";
-import { isWidthUp, WithWidth } from "@material-ui/core/withWidth";
+import { withWidth } from "@material-ui/core";
+import { WithWidth } from "@material-ui/core/withWidth";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Route, RouteComponentProps, Router, Switch, Redirect } from "react-router-dom";

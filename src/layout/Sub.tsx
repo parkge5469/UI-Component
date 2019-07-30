@@ -64,7 +64,6 @@ interface Props extends RouteComponentProps<void>, WithWidth {
 }
 
 function Sub(props?: Props) {
-	const classes = useStyles();
 	//const [mobileOpen, setMobileOpen] = React.useState(true);
 
 	if (!props) {

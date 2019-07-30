@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps,NavLink } from 'react-router-dom';
-import { Card,CardContent,TextField,Button,FormControl,InputLabel,InputBase,NativeSelect,Select } from '@material-ui/core';
-import { makeStyles,withStyles,fade } from '@material-ui/core/styles';
+import { Card,CardContent,TextField,Button,FormControl,InputLabel,Select } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import {} from '@material-ui/core/colors';
 import MaskedInput from 'react-text-mask';
 import InputMask from 'react-input-mask';
@@ -12,15 +12,15 @@ interface Props extends RouteComponentProps<void>{}
 const SignUp = (props:Props) => {
     const classes = useStyles();
 
-    const TextMaskCustom = () => {
-        return(
-            <MaskedInput
-                mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                showMask
-                className={classes.textMask}
-            />
-        )
-    }
+    // const TextMaskCustom = () => {
+    //     return(
+    //         <MaskedInput
+    //             mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+    //             showMask
+    //             className={classes.textMask}
+    //         />
+    //     )
+    // }
     return (
         <Card className={classes.card}>
             
