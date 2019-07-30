@@ -8,6 +8,16 @@ interface Props extends RouteComponentProps<void>{}
 
 const LoginPage = (props:Props) => {
     const classes = useStyles();
+    const [ id,setId ] = React.useState('');
+    const [ password,setPW ] = React.useState(''); 
+    const idInput = React.useRef<any>();   
+    const passwordInput = React.useRef<any>();    
+
+    function HandleClick(): void{
+        const id = idInput.current.value();
+        console.log('LoginPage-HandleClick : ' + id);
+        
+    }
 
     return (
         <div className={classes.root}>
@@ -19,12 +29,12 @@ const LoginPage = (props:Props) => {
                     <CardContent>
                         <div className={classes.loginForm}>
                             <div className={classes.inputForm}>
-                                <CssTextField id="custom-css-standard-input" label="ID" />
-                                <CssTextField id="custom-css-standard-input" label="Password" type='password' />
+                                <CssTextField ref={idInput} id="custom-css-standard-input" label="ID" />
+                                <CssTextField ref={passwordInput} id="custom-css-standard-input" label="Password" type='password' />
                             </div>
 
                             <NavLink to='/main'>
-                                <LoginButton variant='contained' color='primary' fullWidth={true} >
+                                <LoginButton variant='contained' color='primary' fullWidth={true} onClick={HandleClick}>
                                     로그인
                                 </LoginButton>
                             </NavLink>
